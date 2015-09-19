@@ -1,0 +1,96 @@
+.dimension {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  position: relative;
+}
+  
+.dimension.disabled .dimension__current {
+  border: none;
+  color: #989898 !important;
+  cursor: default;
+}
+    
+.dimension.disabled .dimension__list {
+  display: none;
+}
+  
+.dimension.disabled table {
+  width: 100%
+}
+  
+.dimension.focus {
+  border-color: #d0ba65;
+  -webkit-box-shadow: 0 0 10px #fc0;
+  box-shadow: 0 0 10px #fc0;
+}
+  
+.dimension input[type="text"] {
+  border: none;
+  width: 100%;
+  min-width: 60px;
+  height: 32px;
+  margin-bottom: 1px;
+}
+    
+.dimension input[type="text"]:focus {
+  border: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.dimension__before {
+  margin: 0 0 0 8px;
+  color: #9E9E9E;
+  cursor: default;
+}
+
+.dimension__after {
+  position: relative;
+}
+    
+.dimension__current {
+  color: #333;
+  margin: 0 8px;
+  border-bottom: 1px dotted;
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dimension__current:not(.disabled):hover {
+  color: #E8BD11;
+}
+
+.dimension__current.disabled {
+  cursor: default
+}
+  
+.dimension__list {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 8px;
+  background: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+  
+
+.dimension__item {
+  cursor: pointer;
+  padding: 4px 16px;
+  white-space: nowrap;
+}
+  
+.dimension__item:hover {
+  background: #fee9a5;
+}
+  
+.dimension__item.active {
+  background: #ffdb4c;
+}
+
+
+.dimension:hover {
+    border-color: darkgray;
+}

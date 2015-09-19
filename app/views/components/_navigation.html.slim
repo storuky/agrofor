@@ -1,0 +1,35 @@
+script type="text/ng-template" id="navigation.html"
+  .sidebar.hide-scroll scroll="" ng-class="{minify: Page.current=='search'}"
+    a.logo.p-logo ng-class="{'logo-map': Page.current == 'search'}" href="/"
+      span.text-red Agro 
+      span for PRO
+
+    nav.nav ng-class="{sign: gon.user}"
+      .nav__create
+        a.btn.btn-primary.ripple href="/positions/new" Создать позицию
+      
+      .nav__links
+        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'positions'}" href="/positions?status=opened" Мои позиции
+        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'offers'}" href="/offers" Мои предложения
+        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'messages'}" href="/messages" Сообщения
+        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'analytics'}" href="/analytics" Аналитика
+        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'help'}" href="/help" Справка
+        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'support'}" href="/support" Поддержка
+
+      footer.nav__footer
+        - if user_signed_in?
+          a.nav__user href="/profile"
+            .nav__user-avatar
+              img ng-src="{{gon.user.avatar.original}}"
+            .nav__user-info
+              .nav__user-name
+                | {{gon.user.fullname | shortname}}
+              .nav__user-status Фермер
+
+        .nav__links
+          - if user_signed_in?
+            a.nav__link ng-class="{active: Page.current == 'settings'}" href="/settings" Настройки
+            a.nav__link ng-click="Sign.out()" href="" Выход
+          - else
+            a.nav__link href="" ng-click="Sign.show = 'up'" Регистрация
+            a.nav__link href="" ng-click="Sign.show = 'in'" Вход

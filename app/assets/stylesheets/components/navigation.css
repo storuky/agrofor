@@ -1,0 +1,154 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+}
+
+.sidebar.minify .logo {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.sidebar.minify .nav {
+  top: 90px;
+  left: 27px;
+  width: 180px;
+  bottom: 0;
+  padding-top: 0;
+  height: 365px;
+  margin-bottom: 14px;
+  transition: .3s;
+  z-index: 1;
+}
+
+.sidebar.minify .nav.sign {
+  height: 438px;
+}
+
+.sidebar.minify .nav__link {
+  padding: 8px 16px;
+}
+
+.sidebar.minify .nav__create {
+  padding: 28px 15px;
+}
+
+.sidebar.minify .nav__user {
+  padding-left: 16px;
+}
+
+.logo {
+  position: absolute;
+  left: 30px;
+  top: 25px;
+  z-index: 102;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 25px;
+  margin-top: 5px;
+  color: black;
+}
+
+.nav {
+  background: #fff;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 200px;
+  padding-top: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav__links {
+}
+
+.nav__link {
+  padding: 8px 28px;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  transition: padding 0.3s;
+}
+
+.nav__link:hover {
+  background-color: #fee9a5;
+}
+
+.nav__link.active {
+  box-shadow: 4px 0 0px #ffdb4c inset;
+  font-weight: 500;
+}
+
+.nav__create {
+  height: 87px;
+  padding: 28px 26px;
+}
+
+.nav__footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background: #f0f0f0;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.nav__user {
+  padding: 16px 16px 16px 27px;
+  transition: 0.3s;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  overflow: hidden;
+  position: relative;
+}
+
+.nav__user:hover {
+  background-color: #e7e7e7;
+}
+
+.nav__user-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  float: left;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  overflow: hidden;
+}
+
+.nav__user-avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+.nav__user-info {
+  margin-left: 50px;
+  padding: 7px 3px;
+}
+
+.nav__user-name {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.nav__user-status {
+  font-size: 11px;
+  color: #777;
+}
+
+.nav__footer .nav__links {
+  border-top: 1px solid #d8d8d8;
+}
+
+.nav__footer .nav__link:hover {
+  background-color: #e7e7e7;
+}
+
+.nav__footer .nav__link.active {
+  background-color: #e7e7e7;
+  box-shadow: none;
+}

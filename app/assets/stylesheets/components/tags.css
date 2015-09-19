@@ -1,0 +1,69 @@
+.tags {
+  border: 1px solid #e7e7e7;
+}
+
+.tags .tags__add {
+  float: right;
+  margin: 5px;
+  height: 28px;
+  line-height: 26px;
+  padding: 0 8px 0 0;
+}
+
+.tags .tags__add:before {
+  content: "+";
+  display: block;
+  height: 26px;
+  float: left;
+  margin-right: 8px;
+  border-right: 1px solid #d7b940;
+  font-size: 20px;
+  padding: 0 7px 0 8px;
+  font-weight: lighter;
+}
+
+.tags__area {
+  background: white;
+  min-height: 38px;
+  padding: 5px;
+}
+
+.tags__wrapper {
+  margin-top: -5px;
+}
+
+.tag {
+  font-size: 13px;
+  min-height: 27px;
+  line-height: 26px;
+  border: 1px solid #F5B800;
+  background: #FFF09C;
+  border-radius: 2px;
+  color: #6A5218;
+  display: inline-block;
+  position: relative;
+  padding: 0 25px 0 9px;
+  margin: 5px 5px 0 0;
+  cursor: pointer;
+}
+
+.tag.active {
+  background: #FFD83D;
+}
+
+.tag__title {
+
+}
+
+.tag__delete {
+  font-size: 23px;
+  font-weight: lighter;
+  position: absolute;
+  right: 5px;
+  top: -1px;
+  cursor: pointer;
+}
+
+.tag__delete:hover {
+  color: red;
+}

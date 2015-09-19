@@ -1,0 +1,20 @@
+@media screen and (max-height: 500px) {
+  .nav {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .search__extended__wrapper {
+    right: auto;
+    left: 620px;
+  }
+}
+
+
+@media screen and (min-width: 1630px) {
+  .search__extended__wrapper {
+    right: auto;
+    left: 1150px;
+  }
+}
