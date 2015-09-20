@@ -1,8 +1,8 @@
 script id="select.html" type="text/ng-template"
   .select
-    .select__current ng-click="toggle($event)" ng-class="{active: isShow}"
+    .select__current ng-click="toggle($event)" ng-class="{active: isShow}" click-outside="isShow = false"
       span
-        | {{currentOption}}
+        | {{currentOption || placeholder}}
       i.icon-chevron-down
     .select__list ng-show="isShow"
       .select__item ng-repeat="option in options" ng-click="setActive(option.id)" ng-class="{active: option.id == ngModel}"

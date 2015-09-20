@@ -7,6 +7,8 @@ app.directive('suggest', ['$timeout', function ($timeout) {
     scope: {
       ngModel: "=ngModel",
       coords: "=coords",
+      lat: "=lat",
+      lng: "=lng",
       rebuild: "=rebuild",
     }, // {} = isolate, true = child, false/undefined = no change
     // controller: function($scope, $element, $attrs, $transclude) {},
@@ -27,6 +29,8 @@ app.directive('suggest', ['$timeout', function ($timeout) {
           if ($scope.ngModel) {
             ymaps.geocode($scope.ngModel).then(function (res) {
               $scope.coords = res.geoObjects.get(0).geometry.getCoordinates();
+              $scope.lat = $scope.coords[0];
+              $scope.lng = $scope.coords[1];
               $scope.$apply();
             });
           } else {

@@ -1,0 +1,88 @@
+form.position__form
+  .row style="margin-bottom: 0"
+    .col-xs-6.col
+      .row
+        .col
+          #type
+            label.label Тип
+            label.input
+              radio ng-model="ctrl.position.trade_type_id" options="[{id: 1, title: 'Закупка'}, {id: 2, title: 'Продажа'}]"
+      .row
+        .col
+          #option_id
+            label.label Категория
+            .input
+              ng-select placeholder="'Выберите категорию'" options="[{id: 1, title: 'lol'}, {id: 2, title: 'lal'}]" ng-model="ctrl.position.option_id"
+      .row
+        .col
+          #title
+            label.label Название
+            label.input
+              input type="text" ng-model="ctrl.position.title"
+      .row
+        .col#weight
+          label.label Вес (объем)
+          .input
+            dimension options="gon.data.weight_dimensions" ng-model="ctrl.position.weight" ng-model-dimension="ctrl.position.weight_dimension_id"
+        .col#weight_min
+          label.label Мин. заказ
+          .input
+            dimension options="gon.data.weight_dimensions" ng-model="ctrl.position.weight_min" ng-model-dimension="ctrl.position.weight_min_dimension_id"
+    .col-xs-6.col
+      .row
+        .col#lat
+          label.label Местоположение
+          map.positions__map markers="[ctrl.position]" coords="ctrl.position.coords" draggable="true" clickable="true" address="ctrl.position.address" lat="ctrl.position.lat" lng="ctrl.position.lng" city="ctrl.position.city"
+  .row
+    .col-xs-6.col
+      .row
+        .col#price
+          label.label Цена
+          .input
+            dimension prefix="gon.currency.title + '/'" options="gon.data.weight_dimensions" ng-model="ctrl.position.price" ng-model-dimension="ctrl.position.price_weight_dimension_id"
+        .sep
+          | ±
+        .col#discount
+          label.label Допуск
+          .input#price_discount
+            dimension.disabled options="[{id: 1, title: '%'}]" ng-model="ctrl.position.price_discount"
+    .col-xs-6.col
+      .row
+        .col
+          label.label
+            | Адрес
+          #address
+            input rebuild="ctrl.position.coords" suggest="" type="text" ng-model="ctrl.position.address" lat="ctrl.position.lat" lng="ctrl.position.lng" coords="ctrl.position.coords"
+  .row
+    .col-xs-12.col
+      #description
+        label.label Описание
+        .textarea
+          textarea rows="10" ng-model="ctrl.position.description"
+  .row
+    .col-xs-12.col
+      #attachment
+        label.label Загрузка фото
+        div
+          span.image-attachments.dcbox reload="{{ctrl.position.attachments.length}}"
+            a.image-attachment ng-href="{{attachment.url.original}}" ng-repeat="attachment in ctrl.position.attachments"
+              span.image-attachment__delete ng-click="ctrl.deleteAttachment(attachment.id, $index, $event)" &times;
+              img ng-src="{{attachment.url.thumb}}"
+          label.image-attachment__uploader
+            span +
+            input type="file" fileread="files" multiple="true"
+  .row ng-hide="isEdit"
+    .col
+      label.label Сохранить как шаблон
+      label.checkbox#is_template
+        input type="checkbox" ng-model="ctrl.position.is_template"
+        .checker
+
+      input#template ng-disabled="!ctrl.position.is_template" type="text" placeholder="Название шаблона" ng-model="ctrl.position.template_title"
+  .row
+    .col ng-show="ctrl.position.status.id=='opened'"
+      a.btn.btn-default.btn-lg.ripple ng-click="ctrl.close()" Закрыть
+    .col ng-show="ctrl.position.status.id=='archive'"
+      a.btn.btn-default.btn-lg.ripple ng-click="ctrl.restore()" Восстановить
+    .col
+      a.btn.btn-primary.btn-lg.ripple ng-click="ctrl.save()" Сохранить

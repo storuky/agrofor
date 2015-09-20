@@ -5,13 +5,19 @@ app.directive('clickOutside', ['$document', function ($document) {
       clickOutside: '&'
     },
     link: function (scope, el, attr) {
-      $document.on('click', function (e) {
+      var handler = function (e) {
         if (el !== e.target && !el[0].contains(e.target)) {
           scope.$apply(function () {
               scope.$eval(scope.clickOutside);
           });
         }
-      });
+      }
+
+      $document.bind('click', handler);
+
+      scope.$on('$destroy', function () {
+        $document.unbind('click', handler)
+      })
     }
   }
 }]);

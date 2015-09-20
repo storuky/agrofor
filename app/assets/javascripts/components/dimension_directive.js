@@ -1,4 +1,4 @@
-app.directive('dimension', ['$rootScope', '$document', function($rootScope, $document) {
+app.directive('dimension', ['$rootScope', function($rootScope) {
   // Runs during compile
   return {
     // name: '',
@@ -54,13 +54,6 @@ app.directive('dimension', ['$rootScope', '$document', function($rootScope, $doc
         else
           $scope.setActive($scope.options[0].id)
       })
-
-      $document.on('click', function (e) {
-        if (iElm !== e.target && !iElm[0].contains(e.target)) {
-          $scope.isShow = false;
-          $scope.$apply();
-        }
-      });
     }
   };
 }]);

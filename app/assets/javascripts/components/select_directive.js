@@ -1,4 +1,4 @@
-app.directive('ngSelect', ['$document', function($document) {
+app.directive('ngSelect', [function() {
   // Runs during compile
   return {
     // name: '',
@@ -6,7 +6,8 @@ app.directive('ngSelect', ['$document', function($document) {
     // terminal: true,
     scope: {
       ngModel: "=ngModel",
-      options: "=options"
+      options: "=options",
+      placeholder: "=placeholder"
     }, // {} = isolate, true = child, false/undefined = no change
     // controller: function($scope, $element, $attrs, $transclude) {},
     // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
@@ -27,23 +28,10 @@ app.directive('ngSelect', ['$document', function($document) {
         $scope.isShow = false;
       }
 
-      $scope.$watchCollection('options', function (v) {
-        if (v) {
-          var id = _.isUndefined($scope.ngModel) ? v[0].id : $scope.ngModel;
-          $scope.setActive(id)
-        }
-      });
-
       $scope.$watch('ngModel', function (id) {
-        $scope.setActive(id);
+        if (id)
+          $scope.setActive(id);
       })
-
-      $document.on('click', function (e) {
-        if (iElm !== e.target && !iElm[0].contains(e.target)) {
-          $scope.isShow = false;
-          $scope.$apply();
-        }
-      });
     }
   };
 }]);

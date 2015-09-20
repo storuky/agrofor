@@ -1,0 +1,60 @@
+.image-attachments {
+  height: 100px;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+}
+  
+.image-attachment {
+  position: relative;
+  display: inline-block;
+}
+
+.image-attachment__delete {
+  font-weight: lighter;
+  font-size: 21px;
+  color: #fff;
+  background: #f00;
+  border-radius: 15px;
+  display: inline-block;
+  position: absolute;
+  right: 3px;
+  top: -7px;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  line-height: 17px;
+  opacity: 0.7;
+}
+.image-attachment__delete:hover {
+  opacity: 1;
+}
+
+.image-attachment img {
+  height: 100px;
+  margin-right: 10px;
+}
+
+.image-attachment__uploader {
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border: 1px dashed #ccc;
+  font-size: 40px;
+  font-weight: lighter;
+  padding: 25px 35px;
+  text-align: center;
+  color: #989898;
+  cursor: pointer;
+}
+  
+  
+.image-attachment__uploader:hover {
+  background: #f7f7f7;
+}
+
+.image-attachment__uploader input[type="file"] {
+  display: none;
+}

@@ -1,6 +1,6 @@
 script id="dimension.html" type="text/ng-template"
   .dimension ng-class="{focus: focus}"
-    table
+    table click-outside="isShow = false"
       tr
         td ng-show="before"
           label for="{{uid}}"

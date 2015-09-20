@@ -10,7 +10,11 @@ admin = User.where(email: "admin@admin.com").first_or_create(password: "12312312
 
 puts "Создание категории"
 Category::CATEGORY.each do |title|
-  Category.where(title: title).first_or_create
+  category = Category.where(title: title).first_or_create
+
+  Option::OPTIONS[category.title].each do |option|
+    Option.create(category: category, title: option)
+  end
 end
 
 
@@ -64,8 +68,7 @@ i = 0
         description: Faker::Lorem.paragraph
     }
 
-    pos = Position.create params
-
+    Position.create params
     puts "Позиция №#{i} создана"
   end
 end

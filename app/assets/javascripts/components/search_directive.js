@@ -1,4 +1,4 @@
-app.directive('search', ['Search', '$document', function (Search, $document) {
+app.directive('search', ['Search', function (Search) {
   return {
     // name: '',
     // priority: 1,
@@ -14,14 +14,6 @@ app.directive('search', ['Search', '$document', function (Search, $document) {
     // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
     link: function($scope, iElm, iAttrs, controller) {
       $scope.Search = Search;
-
-      $document.on('click', function (e) {
-        if (iElm !== e.target && !iElm[0].contains(e.target)) {
-          Search.showExtended = false;
-          $scope.showFooter = false;
-          $scope.$apply();
-        }
-      });
     }
   };
 }]);

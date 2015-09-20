@@ -22,19 +22,20 @@
 }
     
 .select__current i {
-  font-size: 14px;
+  font-size: 12px;
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: 7px;
+  top: 10px;
 }
 
 .select__list {
   position: absolute;
   top: 30px;
-  left: -1px;
-  right: -1px;
+  left: 0px;
+  right: 0px;
   max-height: 100px;
-  border: 1px solid #ccc;
+  border: 1px solid #A9A9A9;
+  border-top: none;
   z-index: 1;
 }
 

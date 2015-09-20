@@ -229,7 +229,7 @@
   width: 345px;
   position: absolute;
   top: 60px;
-  z-index: 9999;
+  z-index: 2;
   margin-bottom: 10px;
 }
 

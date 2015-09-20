@@ -1,0 +1,57 @@
+/*
+* Форма
+*/
+
+.position__form {
+  padding-top: 25px;
+  width: 720px;
+}
+
+.position__form #title {
+  width: 308px;
+}
+      
+.position__form #category {
+  width: 200px;
+}
+      
+.position__form #weight,
+.position__form #weight_min {
+  width: 162px; 
+}
+
+
+.position__form #price {
+  width: 200px;
+}
+  
+.position__form #discount {
+  width: 111px;
+}
+
+.position__form #description {
+  margin-top: -15px;
+  max-width: 795px;
+}
+  
+.position__form #address {
+  display: block;
+  width: 352px;
+}
+      
+.position__form #template {
+  width: 300px;
+  padding-left: 35px;
+}
+
+.position__form #is_template {
+  position: absolute;
+  z-index: 2;
+  margin: 8px;
+}
+
+.positions__map {
+  width: 350px;
+  height: 240px;
+  display: block;
+}
