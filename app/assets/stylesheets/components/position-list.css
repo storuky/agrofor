@@ -1,0 +1,60 @@
+.position-list {
+  font-size: 13px;
+  max-height: 300px;
+  position: relative;
+}
+  
+.position-list__item {
+  min-height: 75px;
+  display: block;
+  line-height: 18px;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+  background: white;
+}
+  
+.position-list__item .icon-star-fill {
+  color: #ffc107;
+  font-size: 21px;
+  margin-top: -3px;
+}
+  
+.position-list__item:hover {
+  background: #f7f7f7;
+}
+
+.position-list input[type=checkbox]:checked ~ .position-list__bg {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #fee9a5;
+}
+
+.position-list__left {
+  width: 40px;
+  height: 100%;
+  float: left;
+  padding: 18px 6px;
+}
+
+.position-list__right {
+  position: relative;
+  z-index: 1;
+}
+
+.position-list__title {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.position-list__category {
+  font-weight: lighter;
+}
+  
+.position-list__info {
+  font-weight: lighter;
+}

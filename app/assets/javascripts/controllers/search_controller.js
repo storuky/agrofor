@@ -1,4 +1,4 @@
-app.controller('SearchController', ['$scope', 'Page', 'Search', function ($scope, Page, Search) {
+app.controller('SearchController', ['$scope', 'Page', 'Search', '$position', function ($scope, Page, Search, $position) {
   var ctrl = this;
 
   Page.current = 'search';
@@ -7,13 +7,10 @@ app.controller('SearchController', ['$scope', 'Page', 'Search', function ($scope
     ctrl.markers = res;
   });
 
+  ctrl.myPositions = $position.query({status: 'opened'});
+
   $scope.$watch('ctrl.map', function (map) {
     if (map) {
-      console.log(map)
-      map.events.add('click', function (e) {
-        console.log(e.get('coords'))
-      });
-
       map.behaviors.events.add('dragstart', function (e) {
         Page.transparent = true;
         $scope.$apply();

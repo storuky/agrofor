@@ -1,0 +1,28 @@
+.tabset {
+}
+
+.tab {
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 13px;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: #999;
+}
+
+.tab:hover {
+  color: black;
+}
+
+.tab__count {
+  color: #999;
+  margin-left: 7px;
+}
+
+.tab.active {
+  border-bottom: 2px solid red;
+  padding-bottom: 7px;
+  cursor: default;
+  color: black;
+}

@@ -9,14 +9,14 @@ app.service('Sign', ['$http', function ($http) {
   }
 
   Sign.in = function (form) {
-    $http.post(Routes.user_session_path(), form)
+    $http.post(Routes.user_session_path(), {user: form})
       .success(function () {
         window.location.reload();
       })
   }
 
   Sign.up = function (form) {
-    $http.post(Routes.user_registration_path(), form)
+    $http.post(Routes.user_registration_path(), {user: form})
       .success(function () {
         window.location.reload();
       })

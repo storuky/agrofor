@@ -1,12 +1,13 @@
 script type="text/ng-template" id="search.html"
   div
-    div click-outside="Search.showExtended = false; showFooter = false"
-      .search
+    div click-outside="Search.showExtended = false; showFooter = false;"
+      .search ng-class="{transparent: Page.transparent}"
         .search__form
           .search__input
             input ng-model="Search.query" ng-model-options="{debounce: 300}" type="text" placeholder="Купить пщеницу" ng-focus="showFooter = true"
             .search__addons
-              i.icon-extended ng-click="showFooter=!showFooter"
+              i.icon-earth ng-class="{active: Search.type == 'map'}" ng-click="Search.type='map'"
+              i.icon-list ng-class="{active: Search.type == 'list'}" ng-click="Search.type='list'"
           .search__btn
             span Найти
         
@@ -18,11 +19,11 @@ script type="text/ng-template" id="search.html"
 
               .tags__area
                 .tags__wrapper
-                  .tag ng-repeat="tag in tags" ng-click="setActiveTag($index)" ng-class="{active: form.id == tag.id}"
+                  .tag ng-repeat="tag in Search.tags" ng-click="setActiveTag(tag)" ng-class="{active: Search.form.id == tag.id}"
                     .tag__title
                       | {{gon.group.trade_types[tag.trade_type_id]}} &nbsp;
                       span ng-show="tag.option_id" «{{gon.group.options[tag.option_id].title}}» &nbsp;
-                    .tag__delete ng-click="tags.splice($index, 1);"
+                    .tag__delete ng-click="Search.tags.splice($index, 1);"
                       | &times;
           .search__count
             | {{Search.positions_count | plur:['Найдена', 'Найдено', 'Найдены']}}
@@ -45,7 +46,7 @@ script type="text/ng-template" id="search.html"
               .col#category
                 label.label Категория
                 label.input
-                  ng-select ng-model="Search.form.option_id" options="[{id: 1, title: 'Опция 1'}, {id: 2, title: 'Опция 2'}]"
+                  category.right ng-model="Search.form.option_id"
             .row
               .col#location
                 label.label Местоположение

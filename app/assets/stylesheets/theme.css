@@ -1,34 +1,35 @@
-html, body {
- width: 100%;
- height: 100%;
- margin: 0;
- padding: 0;
- font-size: 14px;
- font-family: 'Roboto', sans-serif;
- min-width: 1000px;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  min-width: 1000px;
 }
 
 body {
- overflow: hidden;
- position: relative;
- background-color: #F6F5F3;
+  overflow: hidden;
+  position: relative;
+  background-color: #F6F5F3;
 }
 
 * {
- box-sizing: border-box;
- outline: none !important;
+  box-sizing: border-box;
+  outline: none !important;
 }
 
 .ng-cloak {
- visibility: hidden;
+  visibility: hidden;
 }
 
 .pull-right {
- float: right !important;
+  float: right !important;
 }
 
 .pull-left {
- float: left !important;
+  float: left !important;
 }
 
 .clearfix:after {
@@ -77,7 +78,7 @@ a {
 }
 
 a.link {
-  color: #2278CC; 
+  color: #2278CC;
 }
 
 a.link:active {
@@ -132,7 +133,6 @@ textarea:disabled {
   background: rgba(240, 240, 240, 0.58)
 }
 
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
@@ -145,7 +145,7 @@ textarea:focus {
   -webkit-o-shadow: 0 0 10px #fc0;
   -webkit-ms-shadow: 0 0 10px #fc0;
 }
-  
+
 textarea {
   padding: 8px;
   width: 100%;
@@ -166,7 +166,7 @@ label.label {
   opacity: 0;
   transition: .3s;
 }
-  
+
 .errors.show {
   opacity: 1
 }
@@ -207,12 +207,16 @@ label.label {
 .btn-default {
   background: white;
   color: #2b2b2b;
-  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.btn-default:hover {
+  border-color: darkgrey;
 }
 
 .btn-danger {
   background: #ef5350;
-  color: #2b2b2b;
+  color: #fff;
   border: 1px solid #ef5350;
 }
 
@@ -222,6 +226,32 @@ label.label {
   padding: 0 25px;
 }
 
+.btn-icon {
+  height: 30px;
+  width: 30px;
+  padding: 6px;
+  text-align: center;
+  border-radius: 3px;
+  margin-right: 5px;
+  font-size: 15px;
+  color: #B3B3B3;
+  background: transparent;
+  border-color: transparent;
+}
+
+.btn-icon.btn-default:hover {
+  border-color: darkgrey;
+  background: white;
+  color: #333;
+}
+
+.btn-icon .icon-eye {
+  font-size: 18px;
+  position: relative;
+  top: -1px;
+  left: -1px;
+}
+
 .text-red {
   color: red;
 }
@@ -229,7 +259,7 @@ label.label {
 .row {
   margin: 0 -8px 15px -8px
 }
-  
+
 .row:after {
   visibility: hidden;
   display: block;
@@ -254,8 +284,11 @@ label.label {
   vertical-align: bottom;
 }
 
-
-input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover, input[type="number"]:hover, textarea:hover {
+input[type="text"]:not(:disabled):hover,
+input[type="email"]:not(:disabled):hover,
+input[type="password"]:not(:disabled):hover,
+input[type="number"]:not(:disabled):hover,
+textarea:not(:disabled):hover {
   border-color: darkgrey;
 }
 
@@ -317,4 +350,107 @@ input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hove
 
 .padding-0 {
   margin: 0 !important;
+}
+
+.transparent {
+  opacity: .5;
+}
+
+.checkbox {
+  width: auto !important;
+  cursor: pointer;
+  display: inline-block !important;
+  color: #414141;
+}
+
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox input[type="checkbox"]:checked ~ i:before {
+  content: "\e622";
+  font-size: 15px;
+  position: relative;
+  top: 1px;
+  z-index: 2;
+}
+
+.checkbox i {
+  margin: -1px 7px 0 0;
+  background: white;
+  width: 19px;
+  height: 19px;
+  color: black;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: inline-block !important;
+  vertical-align: middle;
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ol {
+  counter-reset: item;
+}
+
+ol li {
+  display: block;
+}
+
+ol li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  color: #A0A0A0;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.table {
+}
+
+.table thead {
+}
+
+.table tbody {
+}
+
+.table tbody tr {
+  cursor: pointer;
+}
+
+.table tbody tr:hover {
+  background: #fafafa;
+}
+
+.table thead tr {
+  background: #f6f5f3;
+  height: 40px;
+  font-size: 13px;
+}
+
+.table td {
+  padding: 10px 20px;
+}
+
+.table th {
+  text-align: left;
+  padding: 0 20px;
+}
+
+.table .icon-chevron-right {
+  font-size: 12px;
+  color: #6F6F6F;
+}
+
+.w0 {
+  width: 1px;
+  white-space: nowrap;
 }

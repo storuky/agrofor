@@ -1,4 +1,14 @@
 .page
-  h1 Новая позиция
+  .clearfix
+    h1.pull-left Новая позиция
+
+    .position__template-dropdown.pull-left
+      dropdown title="'Использовать шаблон'"
+        ul.position__template-dropdown__list scroll="" ng-show="ctrl.templates.length"
+          li.position__template-dropdown__item ng-click="ctrl.setTemplate(template.position)" ng-repeat="template in ctrl.templates"
+            | {{template.title}}
+
+        .position__template__no-result ng-hide="ctrl.templates.length"
+          | Нет шаблонов
 
   = render "form"

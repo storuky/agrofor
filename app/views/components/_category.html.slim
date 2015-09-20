@@ -1,0 +1,16 @@
+script id="category.html" type="text/ng-template"
+  span.category
+    dropdown title="optionTitle || 'Выберите категорию'" is-opened="isOpened"
+      .category__search
+        input type="text" ng-model="search"
+        i.icon-search
+      ul.category__list.hide-scroll scroll=""
+        li.category__item ng-repeat="category in data = (gon.data.categories | filter:search)"
+          a.category__link ng-click="isShow=!isShow"
+            | {{::category.title}}
+            i.icon-chevron-right ng-show="!isShow && !search"
+            i.icon-chevron-down ng-show="isShow || (search && data.length)"
+          
+          ol.category__options ng-show="isShow || (search && data.length)"
+            li.category__options__item ng-class="{active: option.id == $parent.ngModel}" ng-click="setActive(option)" ng-repeat="option in category.options | filter:search"
+              | {{::option.title}}

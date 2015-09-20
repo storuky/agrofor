@@ -14,6 +14,8 @@
   background: white;
   border: 1px solid #ccc;
   border-radius: 2px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .select__current:hover,
@@ -26,6 +28,19 @@
   position: absolute;
   right: 7px;
   top: 10px;
+  z-index: 1;
+}
+
+.select__current:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 19px;
+  height: 30px;
+  background: white;
+  top: 0;
+  box-shadow: 0px 0px 19px 8px #FFFFFF;
 }
 
 .select__list {

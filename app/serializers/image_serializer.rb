@@ -1,4 +1,4 @@
-class AttachmentSerializer < ActiveModel::Serializer
+class ImageSerializer < ActiveModel::Serializer
   attributes :id, :url
 
   def url

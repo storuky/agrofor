@@ -24,14 +24,22 @@ app.directive('ngSelect', [function() {
 
       $scope.setActive = function (id) {
         $scope.ngModel = id;
-        $scope.currentOption = findById($scope.options, id).title;
+        if (id)
+          $scope.currentOption = findById($scope.options, id).title;
+        else
+          $scope.currentOption = $scope.placeholder || $scope.options[0].title
         $scope.isShow = false;
       }
 
       $scope.$watch('ngModel', function (id) {
-        if (id)
-          $scope.setActive(id);
+        $scope.setActive(id);
       })
+
+      $scope.$watch('options', function (options) {
+        if (options && !$scope.placeholder) {
+          $scope.setActive($scope.ngModel || options[0].id);
+        }
+      }, true)
     }
   };
 }]);

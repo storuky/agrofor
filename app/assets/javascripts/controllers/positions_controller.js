@@ -10,4 +10,9 @@ app.controller('PositionsController', ['$scope', 'Page', 'method', '$position', 
     }
   }
 
+  if (method=='index') {
+    ctrl.positions = $position.query({status: 'opened'});
+    ctrl.tab = 'opened';
+  }
+
 }])

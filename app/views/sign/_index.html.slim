@@ -1,0 +1,10 @@
+.sign__wrapper.hide-scroll scroll=""
+  modal.sign-modal is-show="Sign.current"
+    .modal__title
+      span ng-show="Sign.current=='in'"
+        | Вход
+      span ng-show="Sign.current=='up'"
+        | Регистрация
+    .modal__body
+      = render partial: "sign/in"
+      = render partial: "sign/up"

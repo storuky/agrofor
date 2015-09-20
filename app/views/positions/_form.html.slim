@@ -12,7 +12,9 @@ form.position__form
           #option_id
             label.label Категория
             .input
-              ng-select placeholder="'Выберите категорию'" options="[{id: 1, title: 'lol'}, {id: 2, title: 'lal'}]" ng-model="ctrl.position.option_id"
+              category ng-model="ctrl.position.option_id"
+
+
       .row
         .col
           #title
@@ -32,7 +34,7 @@ form.position__form
       .row
         .col#lat
           label.label Местоположение
-          map.positions__map markers="[ctrl.position]" coords="ctrl.position.coords" draggable="true" clickable="true" address="ctrl.position.address" lat="ctrl.position.lat" lng="ctrl.position.lng" city="ctrl.position.city"
+          map.position__map markers="[ctrl.position]" coords="ctrl.position.coords" draggable="true" clickable="true" address="ctrl.position.address" lat="ctrl.position.lat" lng="ctrl.position.lng" city="ctrl.position.city"
   .row
     .col-xs-6.col
       .row
@@ -76,7 +78,7 @@ form.position__form
       label.label Сохранить как шаблон
       label.checkbox#is_template
         input type="checkbox" ng-model="ctrl.position.is_template"
-        .checker
+        i
 
       input#template ng-disabled="!ctrl.position.is_template" type="text" placeholder="Название шаблона" ng-model="ctrl.position.template_title"
   .row

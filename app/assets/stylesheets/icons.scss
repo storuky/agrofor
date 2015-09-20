@@ -23,14 +23,29 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-close:before {
+.icon-eye:before {
+	content: "\e606";
+}
+.icon-pen:before {
+	content: "\e607";
+}
+.icon-list:before {
+	content: "\e600";
+}
+.icon-star:before {
+	content: "\e601";
+}
+.icon-search:before {
 	content: "\e602";
 }
 .icon-extended:before {
-	content: "\e601";
+	content: "\e603";
 }
-.icon-key:before {
-	content: "\e61a";
+.icon-close:before {
+	content: "\e604";
+}
+.icon-earth:before {
+	content: "\e605";
 }
 .icon-email:before {
 	content: "\e614";
@@ -38,23 +53,8 @@
 .icon-user:before {
 	content: "\e619";
 }
-.icon-clock:before {
-	content: "\e609";
-}
-.icon-clip25:before {
-	content: "\e607";
-}
-.icon-marker:before {
-	content: "\e604";
-}
-.icon-search:before {
-	content: "\e600";
-}
-.icon-earth:before {
-	content: "\e603";
-}
-.icon-star-fill:before {
-	content: "\e60f";
+.icon-key:before {
+	content: "\e61a";
 }
 .icon-check:before {
 	content: "\e622";

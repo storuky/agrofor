@@ -1,3 +1,38 @@
 search
 
+.search__widgets.hide-scroll scroll=""
+  widget-pane
+    widget.z3 tab="'suit'" title="'Подходящие'"
+      .widget__lead
+        | Выберите свою позицию и мы подберем подходящие для нее
+      .position-list scroll="" rebuild="{{ctrl.myPositions}}"
+        label.position-list__item.noselect ng-repeat="position in ctrl.myPositions"
+          .position-list__left
+            .checkbox
+              input type="checkbox" ng-model="Search.checkedPosition[position.id]"
+              i
+              .position-list__bg
+
+          .position-list__right
+            .position-list__title
+              | {{position.title}}
+            .position-list__category
+              | {{position.category.title}} / {{position.option.title}}
+            .position-list__info
+              | {{position.trade_type.title}} {{position.weight}} {{position.weight_dimension.title}}, &nbsp;
+              | {{position.price}} {{position.currency.title}}/{{position.price_weight_dimension.title}} &nbsp;
+    widget.z2 tab="'favorite'" title="'Избранное'"
+      .position-list scroll="" rebuild="{{ctrl.myPositions}}"
+        a.position-list__item.noselect ng-click="Page.goToPosition(position.id)" ng-repeat="position in ctrl.favorites"
+          .position-list__left
+            .icon-star-fill
+          .position-list__right
+            .position-list__title
+              | {{position.title}}
+            .position-list__category
+              | {{position.category.title}} / {{position.option.title}}
+            .position-list__info
+              | {{position.trade_type.title}} {{position.weight}} {{position.weight_dimension.title}}, &nbsp;
+              | {{position.price}} {{position.currency.title}}/{{position.price_weight_dimension.title}} &nbsp;
+
 map.search__map markers="ctrl.markers" short="true" map="ctrl.map"

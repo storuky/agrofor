@@ -3,6 +3,7 @@ app.service('Search', ['$http', 'ngNotify', '$rootScope', 'Map', function ($http
 
   Search.tags = [];
   Search.circles = [];
+  Search.type = "map";
 
   Search.all = function (params, fn) {
     $http.get(Routes.search_path({format: 'json'}), {params: params})
@@ -27,17 +28,16 @@ app.service('Search', ['$http', 'ngNotify', '$rootScope', 'Map', function ($http
     }
 
     var tag = _.clone(Search.form);
-    
 
-    if (Search.form.id != undefined) {
-      Search.circles[Search.form.id-1] = Map.createCircle(tag.coords, tag.radius * 1000);
-      Search.circles[Search.form.id-1].updated_at = new Date();
-      Search.tags[Search.form.id-1] = tag;
+    if (tag.id !== undefined) {
+      Search.tags[tag.id] = tag;
     } else {
-      tag.id = Search.tags.length + 1;
-      Search.circles.push(Map.createCircle(tag.coords, tag.radius * 1000));
+      tag.id = Search.tags.length;
       Search.tags.push(tag);
     }
+
+    Search.showExtended = false;
+    Search.resetForm();
   }
 
   Search.resetForm = function () {

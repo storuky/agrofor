@@ -2,6 +2,9 @@
 * Форма
 */
 
+
+
+
 .position__form {
   padding-top: 25px;
   width: 720px;
@@ -50,8 +53,61 @@
   margin: 8px;
 }
 
-.positions__map {
+.position__map {
   width: 350px;
   height: 240px;
   display: block;
+}
+
+.position__template-dropdown {
+
+}
+
+.position__template-dropdown__list {
+  width: 400px;
+  max-height: 160px;
+  padding: 0;
+  margin: -15px;
+  list-style: none;
+  position: relative;
+}
+
+.position__template-dropdown__item {
+  display: block;
+  padding: 12px 17px;
+  cursor: pointer;
+}
+  
+.position__template-dropdown__item:hover {
+  background: #f7f7f7;
+}
+
+/*
+*  Positions page
+*/
+
+.positions__search {
+  position: relative;
+  width: 235px;
+}
+
+.positions__search input[type="text"] {
+    padding-left: 33px;
+
+}
+
+.positions__search i {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 18px;
+  color: darkgrey;
+}
+
+.positions__table {
+  margin-top: 10px;
+}
+
+.position__tabs {
+  margin-top: 9px;
 }

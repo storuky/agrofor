@@ -5,8 +5,37 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+def create_position u
+  lat = 55.831903 + Random.rand(-1.0..1.0)
+  lng = 37.411961 + Random.rand(-1.0..1.0)
+  option = Random.rand(1..327)
+  weight = Random.rand(10..1000)
+  currency_id = Random.rand(1..8)
+  
+  weight_dimension_id = WeightDimension.all.sample.id
+  params = {
+      lat: lat,
+      lng: lng,
+      title: Faker::Commerce.product_name,
+      option_id: option,
+      weight: weight,
+      weight_min: Random.rand(9..weight),
+      weight_dimension_id: weight_dimension_id,
+      weight_min_dimension_id: weight_dimension_id,
+      price_weight_dimension_id: weight_dimension_id,
+      price: Faker::Commerce.price,
+      price_discount: Random.rand(5.0..50.0),
+      currency_id: currency_id,
+      user_id: u.id,
+      address: Faker::Address.street_address,
+      city: Faker::Address.city,
+      trade_type_id: Random.rand(1..2),
+      description: Faker::Lorem.paragraph
+  }
 
-admin = User.where(email: "admin@admin.com").first_or_create(password: "123123123", fullname: "Кононенко Павел Вячеславович", phones: ["+7 (988) 999 6543"])
+  position = Position.create params
+  puts "Позиция №#{position.id} создана"
+end
 
 puts "Создание категории"
 Category::CATEGORY.each do |title|
@@ -29,7 +58,10 @@ Currency::CURRENCY.each do |currency|
   Currency.where(name: currency[:name]).first_or_create
 end
 
-i = 0
+
+admin = User.where(email: "admin@admin.com").first_or_create(password: "123123123", fullname: "Кононенко Павел Вячеславович", phones: ["+7 (988) 999 6543"])
+create_position admin
+
 
 10.times do
   u = User.create({
@@ -40,35 +72,6 @@ i = 0
   })
 
   10.times do
-    i += 1
-    lat = 55.831903 + Random.rand(-1.0..1.0)
-    lng = 37.411961 + Random.rand(-1.0..1.0)
-    option = Random.rand(1..327)
-    weight = Random.rand(10..1000)
-    currency_id = Random.rand(1..8)
-    
-    weight_dimension_id = WeightDimension.all.sample.id
-    params = {
-        lat: lat,
-        lng: lng,
-        title: Faker::Commerce.product_name,
-        option_id: option,
-        weight: weight,
-        weight_min: Random.rand(9..weight),
-        weight_dimension_id: weight_dimension_id,
-        weight_min_dimension_id: weight_dimension_id,
-        price_weight_dimension_id: weight_dimension_id,
-        price: Faker::Commerce.price,
-        price_discount: Random.rand(5.0..50.0),
-        currency_id: currency_id,
-        user_id: u.id,
-        address: Faker::Address.street_address,
-        city: Faker::Address.city,
-        trade_type_id: Random.rand(1..2),
-        description: Faker::Lorem.paragraph
-    }
-
-    Position.create params
-    puts "Позиция №#{i} создана"
+    create_position u
   end
 end

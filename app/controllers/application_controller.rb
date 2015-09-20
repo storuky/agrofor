@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
 
 
       gon.data = {
-        categories: Category.chunk_from_cache,
+        categories: Category.all_from_cache,
         options: ActiveModel::ArraySerializer.new(Option.all_from_cache, each_serializer: OptionSerializer).as_json,
         rates: Currency.get_rates(gon.currency[:name]),
         locales: [{id: "ru", title: "Русский"},{id: "en", title: "English"}],

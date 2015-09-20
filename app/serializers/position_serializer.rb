@@ -7,11 +7,8 @@ class PositionSerializer < ActiveModel::Serializer
   has_one :category, serializer: CategorySerializer
   has_one :weight_dimension
   has_one :weight_min_dimension
-  has_many :attachments
-
-  def images
-    
-  end
+  has_many :images, serializer: ImageSerializer
+  has_many :documents, serializer: DocumentSerializer
 
   def user
     {

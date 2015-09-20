@@ -29,10 +29,9 @@ class Category < ActiveRecord::Base
       "fertilizers and chemicals"]
 
 
-  def self.chunk_from_cache
+  def self.all_from_cache
     Rails.cache.fetch("categories_all_#{I18n.locale}") do
       categories = ActiveModel::ArraySerializer.new(Category.includes(:options), each_serializer: CategoryWithOptionsSerializer)
-      categories.as_json.each_slice( (categories.as_json.length/3.0).round ).to_a
     end
   end
 

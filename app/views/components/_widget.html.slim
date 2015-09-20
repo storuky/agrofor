@@ -1,0 +1,8 @@
+script id="widget.html" type="text/ng-template"
+  .widget ng-class="{quad: PaneCtrl.activeTab, active: PaneCtrl.activeTab == tab, transparent: $root.Page.transparent}" ng-click="PaneCtrl.activeTab = tab"
+    .widget__close
+      i.icon-close ng-click="PaneCtrl.activeTab = ''; $event.stopPropagation();"
+    .widget__title
+      | {{title}}
+    .widget__body
+      ng-transclude

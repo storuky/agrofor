@@ -7,10 +7,11 @@ html ng-app="app"
     = stylesheet_link_tag 'application'
     base href="/"
     = csrf_meta_tags
-  body
-    navigation
+  body.ng-cloak
+    = render 'sign/index'
     
-    ng-view
+    navigation ng-class="{minify: Page.current=='search'}"
+    ng-view.fade
     
     = Gon::Base.render_data({})
     = javascript_include_tag 'application'

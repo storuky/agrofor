@@ -1,0 +1,56 @@
+.page
+  h1 Мои позиции
+
+  .clearfix
+    .pull-left
+      .positions__search
+        i.icon-search
+        input type="text" placeholder="Поиск позиции"
+    tabset.pull-right.position__tabs ng-model="ctrl.tab" ng-init="ctrl.tab='opened'"
+      tab name="opened"
+        | Открытые
+        span.tab__count 1
+      tab name="in_process"
+        | В процессе
+        span.tab__count 0
+      tab name="completed"
+        | Завершенные
+        span.tab__count 0
+      tab name="archive"
+        | Архив
+        span.tab__count 0
+
+  table.table.positions__table
+    thead
+      tr
+        th
+        th Товар
+        th Тип
+        th Предложения
+        th Вес
+        th Цена
+        th
+
+    tbody
+      tr ng-repeat="position in ctrl.positions"
+        td.w0 style="padding-right: 0"
+          i.icon-chevron-right
+        td
+          | {{::position.option.title}}
+        td.w0
+          | {{::position.trade_type.title}}
+        td.w0
+          b ng-show="position.offers.length"
+            | {{::position.offers.length}} {{::position.offers.length | plur: gon.translation.offer.plur}}
+
+          span ng-hide="position.offers.length"
+            | Нет предложений
+        td.w0
+          | {{::position.weight}} {{::position.weight_dimension.title}}
+        td.w0
+          | {{::position.price}} {{::position.currency.title}}/{{position.price_weight_dimension.title}}
+        td.w0
+          a.btn.btn-default.btn-icon
+            .icon-eye
+          a.btn.btn-default.btn-icon
+            .icon-pen

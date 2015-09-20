@@ -1,10 +1,10 @@
 script type="text/ng-template" id="navigation.html"
-  .sidebar.hide-scroll scroll="" ng-class="{minify: Page.current=='search'}"
-    a.logo.p-logo ng-class="{'logo-map': Page.current == 'search'}" href="/"
+  .sidebar.hide-scroll scroll=""
+    a.logo ng-class="{'logo-map': Page.current == 'search'}" href="/"
       span.text-red Agro 
       span for PRO
 
-    nav.nav ng-class="{sign: gon.user}"
+    nav.nav ng-class="{sign: gon.user, transparent: Page.transparent}" 
       .nav__create
         a.btn.btn-primary.ripple href="/positions/new" Создать позицию
       
@@ -31,5 +31,5 @@ script type="text/ng-template" id="navigation.html"
             a.nav__link ng-class="{active: Page.current == 'settings'}" href="/settings" Настройки
             a.nav__link ng-click="Sign.out()" href="" Выход
           - else
-            a.nav__link href="" ng-click="Sign.show = 'up'" Регистрация
-            a.nav__link href="" ng-click="Sign.show = 'in'" Вход
+            a.nav__link href="" ng-click="Sign.current = 'up'" Регистрация
+            a.nav__link href="" ng-click="Sign.current = 'in'" Вход

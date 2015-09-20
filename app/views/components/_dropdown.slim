@@ -1,0 +1,8 @@
+script id="dropdown.html" type="text/ng-template"
+  .dropdown-wrapper
+    a.btn.btn-default.dropdown-btn ng-click="isOpened=!isOpened"
+      | {{title}}
+      i.icon-chevron-down
+
+    .dropdown ng-class="{open: isOpened}"
+      div ng-transclude=""

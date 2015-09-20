@@ -1,4 +1,4 @@
-app.directive('map', ['Search', function (Search) {
+app.directive('map', ['Search', '$timeout', function (Search, $timeout) {
   // Runs during compile
   return {
     // name: '',
@@ -31,18 +31,20 @@ app.directive('map', ['Search', function (Search) {
       var map, geoObjects;
 
       ymaps.ready(function () {
-        map = $scope.map = new ymaps.Map(iElm[0], {
-            center: $scope.coords || [55.7, 37.6],
-            zoom: $scope.zoom || 10,
-            controls: [],
-          }, {
-            maxZoom: $scope.maxZoom || 15,
-            suppressMapOpenBlock: true,
-        });
+        $timeout(function () {
+          map = $scope.map = new ymaps.Map(iElm[0], {
+              center: $scope.coords || [55.7, 37.6],
+              zoom: $scope.zoom || 10,
+              controls: [],
+            }, {
+              maxZoom: $scope.maxZoom || 15,
+              suppressMapOpenBlock: true,
+          });
 
-        drawMarkers($scope.markers);
+          drawMarkers($scope.markers);
 
-        $scope.$apply();
+          $scope.$apply();
+        }, 300)
       })
 
       $scope.$watch('markers', function (markers) {

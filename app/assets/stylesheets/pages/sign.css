@@ -1,0 +1,60 @@
+.sign__wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 230px;
+  width: 600px;
+}
+
+.sign-modal {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  z-index: 2;
+  margin-bottom: 0;
+  top: 90px;
+}
+
+.sign__up {
+  width: 416px;
+}
+
+.sign__in {
+  width: 300px;
+}
+
+.sign-modal input[type="text"],
+.sign-modal input[type="email"],
+.sign-modal input[type="password"] {
+  width: 200px;
+}
+    
+.sign-modal #fullname {
+  display: block;
+  float: none;
+}
+
+.sign-modal #fullname input[type="text"] {
+  width: 100%;
+}
+      
+.sign-modal #is_company {
+  position: absolute;
+  z-index: 1;
+  margin: 9px;  
+}
+  
+.sign-modal #company {
+  float: none;
+}
+    
+.sign-modal #company input[type="text"] {
+  padding-left: 36px;
+  width: 100%;
+}
+
+.sign__in input[type="text"],
+.sign__in input[type="email"],
+.sign__in input[type="password"] {
+  width: 300px;
+}

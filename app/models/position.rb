@@ -17,7 +17,8 @@ class Position < ActiveRecord::Base
   has_many :offers_positions, foreign_key: :position_id, class_name: PositionsOffer
   has_many :offers, through: :offers_positions
   
-  has_many :attachments
+  has_many :images
+  has_many :documents
   
   has_many :correspondence_positions, :inverse_of => :position
   has_many :correspondences, through: :correspondence_positions
@@ -78,7 +79,7 @@ class Position < ActiveRecord::Base
   end
 
   def self.full
-    includes(:offers, :positions_offers, :user, :option, :category, :weight_dimension, :price_weight_dimension, :weight_min_dimension, :currency, :attachments)
+    includes(:offers, :positions_offers, :user, :option, :category, :weight_dimension, :price_weight_dimension, :weight_min_dimension, :currency, :images, :documents)
   end
 
   def self.filter filters = []

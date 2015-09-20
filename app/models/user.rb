@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   has_many :positions
-  has_many :attachments
+  has_many :images
+  has_many :documents
   has_many :templates
 
   belongs_to :currency

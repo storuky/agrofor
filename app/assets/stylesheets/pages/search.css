@@ -5,3 +5,12 @@
   right: 0;
   bottom: 0;
 }
+
+.search__widgets {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  box-sizing: content-box;
+  padding: 20px;
+}

@@ -6,11 +6,6 @@
   width: 250px;
 }
 
-.sidebar.minify .logo {
-  font-size: 30px;
-  margin-top: 0;
-}
-
 .sidebar.minify .nav {
   top: 90px;
   left: 27px;
@@ -45,10 +40,15 @@
   top: 25px;
   z-index: 102;
   text-decoration: none;
-  transition: 0.3s;
+  transition: .3s;
   font-size: 25px;
   margin-top: 5px;
   color: black;
+}
+
+.logo-map {
+  font-size: 30px;
+  margin-top: 0;
 }
 
 .nav {

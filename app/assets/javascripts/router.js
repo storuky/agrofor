@@ -55,14 +55,27 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: Routes.profile_index_path(),
       controller: 'ProfileController as ctrl',
       resolve: {
-        method: 'index'
+        method: function () {
+          return 'index'
+        }
+      }
+    })
+    .when('/profile/:id/edit', {
+      templateUrl: Routes.profile_index_path(),
+      controller: 'ProfileController as ctrl',
+      resolve: {
+        method: function () {
+          return 'edit'
+        }
       }
     })
     .when('/profile/:id', {
       templateUrl: Routes.profile_index_path(),
       controller: 'ProfileController as ctrl',
       resolve: {
-        method: 'show'
+        method: function () {
+          return 'show'
+        }
       }
     })
     .when('/settings', {
