@@ -12,7 +12,7 @@ script type="text/ng-template" id="navigation.html"
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'positions'}" href="/positions?status=opened" Мои позиции
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'offers'}" href="/offers" Мои предложения
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'messages'}" href="/messages" Сообщения
-        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'analytics'}" href="/analytics" Аналитика
+        /a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'analytics'}" href="/analytics" Аналитика
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'help'}" href="/help" Справка
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'support'}" href="/support" Поддержка
 
