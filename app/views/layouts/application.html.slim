@@ -10,7 +10,7 @@ html ng-app="app"
   body.ng-cloak
     = render 'sign/index'
     
-    navigation ng-class="{minify: Page.current=='search'}"
+    navigation
     ng-view.fade
     
     = Gon::Base.render_data({})

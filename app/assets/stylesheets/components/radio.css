@@ -13,12 +13,12 @@
   
 .radio__button {
   margin: 0;
-  height: 32px;
+  height: 38px;
   border: 1px solid #ccc;
   float: left;
   text-align: center;
-  font-size: 12px;
-  padding: 8px 10px;
+  font-size: 14px;
+  padding: 10px 15px;
   cursor: pointer;
   position: relative;
   z-index: 1;

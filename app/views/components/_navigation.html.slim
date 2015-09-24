@@ -1,12 +1,15 @@
 script type="text/ng-template" id="navigation.html"
   .sidebar.hide-scroll scroll=""
-    a.logo ng-class="{'logo-map': Page.current == 'search'}" href="/"
+    a.logo href="/"
       span.text-red Agro 
       span for PRO
-
+    
     nav.nav ng-class="{sign: gon.user, transparent: Page.transparent}" 
+      - if user_signed_in?
+        .nav__profile
+          img src="/images/profile.png"
       .nav__create
-        a.btn.btn-primary.ripple href="/positions/new" Создать позицию
+        a.btn.btn-primary.ripple.btn-lg ng-class="{'': Page.current == 'profile'}" href="/positions/new" Создать позицию
       
       .nav__links
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'positions'}" href="/positions?status=opened" Мои позиции
@@ -17,15 +20,6 @@ script type="text/ng-template" id="navigation.html"
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'support'}" href="/support" Поддержка
 
       footer.nav__footer
-        - if user_signed_in?
-          a.nav__user href="/profile"
-            .nav__user-avatar
-              img ng-src="{{gon.user.avatar.original}}"
-            .nav__user-info
-              .nav__user-name
-                | {{gon.user.fullname | shortname}}
-              .nav__user-status Фермер
-
         .nav__links
           - if user_signed_in?
             a.nav__link ng-class="{active: Page.current == 'settings'}" href="/settings" Настройки

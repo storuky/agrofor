@@ -120,7 +120,7 @@ textarea {
   font-size: 13px;
   outline: none !important;
   -webkit-appearance: none;
-  height: 34px;
+  height: 38px;
   padding-left: 8px;
   width: 100%;
 }
@@ -157,7 +157,7 @@ label.label {
   color: #414141;
   display: block;
   margin-bottom: 5px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .errors {
@@ -172,8 +172,8 @@ label.label {
 }
 
 .btn {
-  height: 32px;
-  line-height: 31px;
+  height: 38px;
+  line-height: 38px;
   padding: 0 15px;
   text-align: center;
   border-radius: 2px;
@@ -224,6 +224,8 @@ label.label {
   height: 40px;
   line-height: 39px;
   padding: 0 25px;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 .btn-icon {

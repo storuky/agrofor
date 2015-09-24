@@ -8,7 +8,7 @@ form.sign__up ng-show="Sign.current=='up'"
       label.label Компания
       label.checkbox.small#is_company
         input type="checkbox" ng-model="is_company"
-        .checker
+        i
       input ng-disabled="!is_company" type="text" ng-value="{{(Sign.form['up'].fullname && !is_company) ? 'ИП «'+Sign.form['up'].fullname+'»' : ''}}" placeholder="Название компании"
   .row
     .col#email

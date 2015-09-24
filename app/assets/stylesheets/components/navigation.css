@@ -3,47 +3,19 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 250px;
-}
-
-.sidebar.minify .nav {
-  top: 90px;
-  left: 27px;
-  width: 180px;
-  bottom: 0;
-  padding-top: 0;
-  height: 365px;
-  margin-bottom: 14px;
-  transition: .3s;
-  z-index: 1;
-}
-
-.sidebar.minify .nav.sign {
-  height: 438px;
-}
-
-.sidebar.minify .nav__link {
-  padding: 8px 16px;
-}
-
-.sidebar.minify .nav__create {
-  padding: 28px 15px;
-}
-
-.sidebar.minify .nav__user {
-  padding-left: 16px;
+  width: 260px;
 }
 
 .logo {
   position: absolute;
-  left: 30px;
-  top: 25px;
   z-index: 102;
   text-decoration: none;
   transition: .3s;
-  font-size: 25px;
   margin-top: 5px;
   color: black;
+  font-size: 30px;
+  top: 23px;
+  left: 36px;
 }
 
 .logo-map {
@@ -55,13 +27,24 @@
   background: #fff;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 200px;
   padding-top: 60px;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
   z-index: 2;
+  width: 250px;
+  padding-top: 80px;
+  height: auto;
+  min-height: 435px;
+}
+
+.nav.sign {
+  min-height: 620px;
+}
+
+.nav__profile img {
+  width: 100%;
 }
 
 .nav__links {
@@ -73,6 +56,7 @@
   color: #000;
   text-decoration: none;
   transition: padding 0.3s;
+  font-size: 16px;
 }
 
 .nav__link:hover {
@@ -87,6 +71,12 @@
 .nav__create {
   height: 87px;
   padding: 28px 26px;
+}
+
+.nav__create .btn {
+  width: 100%;
+  display: block;
+  max-width: none;
 }
 
 .nav__footer {

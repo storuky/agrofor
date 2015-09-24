@@ -1,6 +1,6 @@
 .page {
   position: absolute;
-  left: 200px;
+  left: 250px;
   right: 0;
   top: 0;
   bottom: 0;
@@ -10,6 +10,7 @@
   box-shadow: 0 1px 3px 1px rgba(0,0,0,0.1);
   padding: 30px 10px 30px 30px;
   overflow-x: hidden;
+  transition: .3s;
   overflow-y: auto;
 }
 
