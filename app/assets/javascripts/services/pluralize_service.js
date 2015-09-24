@@ -1,4 +1,4 @@
-app.factory("pluralize", function(){     
+app.factory("pluralize", [function(){     
     return function (count, variants) {
       var result;
       if (variants.length == 3) {
@@ -19,4 +19,4 @@ app.factory("pluralize", function(){
       return result;
     }
     
-})
+}])

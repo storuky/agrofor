@@ -1,4 +1,4 @@
-app.directive('ripple', function() {
+app.directive('ripple', [function() {
   return {
     restrict: 'C',
     link: function (scope, element, attrs) {
@@ -79,4 +79,4 @@ app.directive('ripple', function() {
       });
     }
   };
-});
+}]);
