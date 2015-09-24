@@ -5,7 +5,7 @@ script type="text/ng-template" id="search.html"
         .search__form
           .search__input
             input ng-model="Search.query" ng-model-options="{debounce: 300}" type="text" placeholder="Купить пщеницу" ng-focus="showFooter = true"
-            .search__addons
+            /.search__addons
               i.icon-earth ng-class="{active: Search.type == 'map'}" ng-click="Search.type='map'"
               i.icon-list ng-class="{active: Search.type == 'list'}" ng-click="Search.type='list'"
           .search__btn
