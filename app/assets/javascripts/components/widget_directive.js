@@ -13,9 +13,9 @@ app.directive('widgetPane', [function () {
     // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
     // link: function($scope, iElm, iAttrs, controller) {
     // }
-    controller: function ($scope) {
+    controller: ['$scope', function ($scope) {
       this.activeTab = ''; 
-    }
+    }]
   };
 }]);
 

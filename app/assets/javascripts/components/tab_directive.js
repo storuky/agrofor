@@ -15,7 +15,7 @@ app.directive('tabset', [function () {
     // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
     // link: function($scope, iElm, iAttrs, controller) {
     // }
-    controller: function ($scope) {
+    controller: ['$scope', function ($scope) {
       var TabsetCtrl = this;
 
       $scope.$watch(function () {
@@ -28,7 +28,7 @@ app.directive('tabset', [function () {
       $scope.$watch('ngModel', function (ngModel) {
         TabsetCtrl.activeTab = ngModel;
       })
-    }
+    }]
   };
 }]);
 
