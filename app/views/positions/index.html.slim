@@ -23,7 +23,6 @@
   table.table.positions__table
     thead
       tr
-        th
         th Товар
         th Тип
         th Предложения
@@ -33,8 +32,6 @@
 
     tbody
       tr ng-repeat="position in ctrl.positions"
-        td.w0 style="padding-right: 0"
-          i.icon-chevron-right
         td
           | {{::position.option.title}}
         td.w0

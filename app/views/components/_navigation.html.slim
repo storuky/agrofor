@@ -9,7 +9,7 @@ script type="text/ng-template" id="navigation.html"
         .nav__profile
           img src="/images/profile.png"
       .nav__create
-        a.btn.btn-primary.ripple.btn-lg ng-class="{'': Page.current == 'profile'}" href="/positions/new" Создать позицию
+        a.btn.btn-primary.ripple ng-class="{'': Page.current == 'profile'}" href="/positions/new" Создать позицию
       
       .nav__links
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'positions'}" href="/positions?status=opened" Мои позиции
