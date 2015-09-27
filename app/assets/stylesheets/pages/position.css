@@ -6,6 +6,7 @@
 
 
 
+
 .position__form {
   padding-top: 25px;
   width: 720px;
@@ -111,4 +112,10 @@
 
 .position__tabs {
   margin-top: 9px;
+}
+
+
+.position__template__no-result {
+    padding: 10px;
+    font-weight: 500;
 }

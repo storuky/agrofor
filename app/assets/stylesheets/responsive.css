@@ -3,16 +3,30 @@
 }
 
 @media screen and (max-width: 1100px) {
-  .search__extended {
+  .search:not(.search__full) ~ .search__extended__wrapper .search__extended {
     right: auto;
     left: 620px;
   }
 }
 
 
+@media screen and (max-width: 1000px) {
+  .search__full ~ .search__extended__wrapper .search__extended {
+    right: auto;
+    left: 610px;
+  }
+}
+
 @media screen and (min-width: 1630px) {
-  .search__extended {
+  .search:not(.search__full) ~ .search__extended__wrapper .search__extended {
     right: auto;
     left: 1150px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .search.search__full ~ .search__extended__wrapper .search__extended {
+    right: auto;
+    left: 845px;
   }
 }

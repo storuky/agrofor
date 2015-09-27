@@ -6,7 +6,7 @@ app.directive('clickOutside', ['$document', function ($document) {
     },
     link: function (scope, el, attr) {
       var handler = function (e) {
-        if (el !== e.target && !el[0].contains(e.target)) {
+        if (el !== e.target && !el[0].contains(e.target) && document.body.contains(e.target)) {
           scope.$apply(function () {
               scope.$eval(scope.clickOutside);
           });

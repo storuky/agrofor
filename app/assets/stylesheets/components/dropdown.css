@@ -89,3 +89,16 @@
     opacity: 1;
   }
 }
+
+
+.dropdown-btn i:after {
+    content: "";
+    background-color: red;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 19px;
+    width: 0;
+    box-shadow: -5px 0px 8px 2px white;
+}

@@ -6,12 +6,86 @@
   bottom: 0;
   z-index: 1;
   background: #fff;
-  -webkit-box-shadow: 0 1px 3px 1px rgba(0,0,0,0.1);
-  box-shadow: 0 1px 3px 1px rgba(0,0,0,0.1);
   padding: 30px 10px 30px 30px;
   overflow-x: hidden;
   transition: .3s;
   overflow-y: auto;
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.scale-down {
+   -webkit-animation: scaleDown .7s ease both; 
+   animation: scaleDown .7s ease both; 
+}
+
+.move-from-right {
+  -webkit-animation: moveFromRight .6s ease both;
+  animation: moveFromRight .6s ease both;
+}
+
+.page__search-list, .page__search-map {
+  visibility: hidden;
+}
+
+.page__search-list.move-from-right, .page__search-list.move-to-right,
+.page__search-map.scale-down, .page__search-map.scale-up {
+  visibility: visible;
+  background-color: #f7f7f7;
+}
+
+.move-to-right {
+  -webkit-animation: moveToRight .6s ease both;
+   animation: moveToRight .6s ease both; 
+}
+
+.scale-up {
+  -webkit-animation: scaleUp .7s ease both;
+  animation: scaleUp .7s ease both;
+}
+
+@-webkit-keyframes scaleDown {
+  from { }
+  to { opacity: 0; -webkit-transform: scale(.8); }
+}
+
+@keyframes scaleDown {
+  from { }
+  to { opacity: 0; -webkit-transform: scale(.8); transform: scale(.8); }
+}
+
+@-webkit-keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); }
+}
+
+@keyframes moveFromRight {
+  from { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveToRight { 
+  from { }
+  to { -webkit-transform: translateX(100%); }
+}
+
+@keyframes moveToRight { 
+  from { }
+  to { -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+@-webkit-keyframes scaleUp {
+  from { opacity: 0; -webkit-transform: scale(.8); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; -webkit-transform: scale(.8); transform: scale(.8); }
 }
 
 .fade {
@@ -45,4 +119,10 @@
   -moz-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
+}
+
+
+.page.page__search-map {
+    left: 0;
+    right: 0;
 }

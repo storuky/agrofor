@@ -39,7 +39,7 @@ app.service('Map', ['pluralize', '$location', '$rootScope', function (pluralize,
           this._events = ymaps.domEvent.manager.group(this.getElement());
           this._events.add('click', function (event) {
             if (this.getData().properties.get('id')) {
-              $location.search({id: this.getData().properties.get('id')})
+              $location.search("id", this.getData().properties.get('id'))
               $rootScope.$apply();
             }
           }, this);

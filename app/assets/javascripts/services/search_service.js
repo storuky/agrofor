@@ -3,7 +3,7 @@ app.service('Search', ['$http', 'ngNotify', '$rootScope', 'Map', function ($http
 
   Search.tags = [];
   Search.circles = [];
-  Search.type = "map";
+  Search.type = Search.type || "map";
 
   Search.all = function (params, fn) {
     $http.get(Routes.search_path({format: 'json'}), {params: params})

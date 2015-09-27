@@ -1,13 +1,13 @@
 script type="text/ng-template" id="search.html"
   div
     div click-outside="Search.showExtended = false; showFooter = false;"
-      .search ng-class="{transparent: Page.transparent}"
+      .search ng-class="{transparent: Page.transparent, search__full: Search.type=='list'}"
         .search__form
           .search__input
             input ng-model="Search.query" ng-model-options="{debounce: 300}" type="text" placeholder="Купить пщеницу" ng-focus="showFooter = true"
-            /.search__addons
-              i.icon-earth ng-class="{active: Search.type == 'map'}" ng-click="Search.type='map'"
-              i.icon-list ng-class="{active: Search.type == 'list'}" ng-click="Search.type='list'"
+            .search__addons
+              a.icon-earth href="?type=map" ng-class="{active: Search.type == 'map'}"
+              a.icon-list href="?type=list" ng-class="{active: Search.type == 'list'}"
           .search__btn
             span Найти
         

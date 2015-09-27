@@ -10,4 +10,6 @@ app.config(['$httpProvider', '$locationProvider', '$compileProvider', function (
    *  Enable HTML5 History API
   */
   $locationProvider.html5Mode(true).hashPrefix('!');
+
+  Pace.options.restartOnPushState = false;
 }]);
