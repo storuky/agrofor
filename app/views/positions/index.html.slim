@@ -47,7 +47,7 @@
         td.w0
           | {{::position.price}} {{::position.currency.title}}/{{position.price_weight_dimension.title}}
         td.w0
-          a.btn.btn-default.btn-icon
+          a.btn.btn-default.btn-icon ng-href="/?id={{position.id}}"
             .icon-eye
-          a.btn.btn-default.btn-icon
+          a.btn.btn-default.btn-icon ng-href="/positions/{{position.id}}/edit"
             .icon-pen

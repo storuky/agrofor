@@ -49,7 +49,7 @@ app.directive('suggest', ['$timeout', function ($timeout) {
         })
 
         $scope.$watch('rebuild', function (val) {
-          if (val) {
+          if (val!==undefined) {
             suggestView.destroy();
             build();
           }

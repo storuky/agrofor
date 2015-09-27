@@ -7,7 +7,6 @@ set :bundle_flags, '--system'
 
 # set :rvm_bin_path, "/home/deploy/.rvm/bin"
 
-set :deploy_to, '/home/deploy/agrofor'
 
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}

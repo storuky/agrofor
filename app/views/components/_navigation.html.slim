@@ -12,7 +12,7 @@ script type="text/ng-template" id="navigation.html"
         a.btn.btn-primary.ripple ng-class="{'': Page.current == 'profile'}" href="/positions/new" Создать позицию
       
       .nav__links
-        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'positions'}" href="/positions?status=opened" Мои позиции
+        a.nav__link place="right-top" hint="Основные разделы сайта" ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'positions'}" href="/positions?status=opened" Мои позиции
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'offers'}" href="/offers" Мои предложения
         a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'messages'}" href="/messages" Сообщения
         /a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'analytics'}" href="/analytics" Аналитика

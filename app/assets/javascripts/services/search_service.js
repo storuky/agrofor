@@ -42,8 +42,7 @@ app.service('Search', ['$http', 'ngNotify', '$rootScope', 'Map', function ($http
 
   Search.resetForm = function () {
     Search.form = {
-      currency_id: gon.currency.id
-    }
+      currency_id: gon.currency.id    }
   }
   Search.resetForm();
 

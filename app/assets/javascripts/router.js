@@ -87,6 +87,6 @@ app.config(['$routeProvider', function ($routeProvider) {
       controller: 'OffersController as ctrl',
     })
     .otherwise({
-      redirectTo: '/search'
+      redirectTo: '/'
     })
 }]);

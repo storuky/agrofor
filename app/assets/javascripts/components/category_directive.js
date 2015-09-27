@@ -27,6 +27,8 @@ app.directive('category', ['$timeout', function ($timeout) {
       $scope.$watch('ngModel', function (id) {
         if (id) {
           $scope.optionTitle = gon.group.options[id].title
+        } else {
+          $scope.optionTitle = undefined;
         }
       })
 

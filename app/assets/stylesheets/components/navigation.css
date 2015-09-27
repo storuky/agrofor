@@ -3,7 +3,7 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 220px;
+  width: 100%;
 }
 
 .logo {
@@ -149,4 +149,10 @@
 
 .nav__profile {
     border: 5px solid #F0F0F0;   border-left: none;   border-right: none;
+}
+
+
+.nav__links .hint {
+    margin-left: 80px;   
+    margin-top: 24px;
 }

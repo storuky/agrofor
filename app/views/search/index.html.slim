@@ -1,5 +1,5 @@
 search
-.page.page__search-map ng-class="{'scale-down': Search.type=='list', 'scale-up': Search.type=='map'}"
+.page.page__search-map ng-class="{'move-from-left': Search.type=='map', 'move-to-left': Search.type=='list'}"
   .search__widgets.hide-scroll scroll=""
     widget-pane
       widget.z3 tab="'suit'" title="'Подходящие'"
@@ -36,5 +36,7 @@ search
                 | {{position.price}} {{position.currency.title}}/{{position.price_weight_dimension.title}} &nbsp;
 
   map.search__map markers="ctrl.markers" short="true" map="ctrl.map"
+  
+  a.btn.hint-btn ng-class="{'btn-default': !Page.showHint, 'btn-primary': Page.showHint}" ng-click="Page.showHint = !Page.showHint" Подсказки
 
 .page.page__search-list ng-class="{'move-from-right': Search.type=='list', 'move-to-right': Search.type=='map'}"

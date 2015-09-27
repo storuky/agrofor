@@ -10,6 +10,7 @@
   overflow-x: hidden;
   transition: .3s;
   overflow-y: auto;
+  opacity: 1;
 
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -28,8 +29,8 @@
 }
 
 .move-from-right {
-  -webkit-animation: moveFromRight .6s ease both;
-  animation: moveFromRight .6s ease both;
+  -webkit-animation: moveFromRightFade .6s ease both;
+  animation: moveFromRightFade .6s ease both;
 }
 
 .page__search-list, .page__search-map {
@@ -37,14 +38,24 @@
 }
 
 .page__search-list.move-from-right, .page__search-list.move-to-right,
-.page__search-map.scale-down, .page__search-map.scale-up {
+.page__search-map.move-to-left, .page__search-map.move-from-left {
   visibility: visible;
   background-color: #f7f7f7;
 }
 
+.move-to-left {
+  -webkit-animation: moveToLeftFade .6s ease both;
+  animation: moveToLeftFade .6s ease both;
+}
+
+.move-from-left {
+  -webkit-animation: moveFromLeftFade .6s ease both;
+  animation: moveFromLeftFade .6s ease both;
+}
+
 .move-to-right {
-  -webkit-animation: moveToRight .6s ease both;
-   animation: moveToRight .6s ease both; 
+  -webkit-animation: moveToRightFade .6s ease both;
+   animation: moveToRightFade .6s ease both; 
 }
 
 .scale-up {
@@ -86,6 +97,54 @@
 
 @keyframes scaleUp {
   from { opacity: 0; -webkit-transform: scale(.8); transform: scale(.8); }
+}
+
+@-webkit-keyframes moveToLeft {
+  from { }
+  to { -webkit-transform: translateX(-100%); }
+}
+@keyframes moveToLeft {
+  from { }
+  to { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveFromLeft {
+  from { -webkit-transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+  from { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveToLeftFade {
+  from { }
+  to { opacity: 0.3; -webkit-transform: translateX(-100%); }
+}
+@keyframes moveToLeftFade {
+  from { }
+  to { opacity: 0.3; -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveFromLeftFade {
+  from { opacity: 0.3; -webkit-transform: translateX(-100%); }
+}
+@keyframes moveFromLeftFade {
+  from { opacity: 0.3; -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveToRightFade {
+  from { }
+  to { opacity: 0.3; -webkit-transform: translateX(100%); }
+}
+@keyframes moveToRightFade {
+  from { }
+  to { opacity: 0.3; -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveFromRightFade {
+  from { opacity: 0.3; -webkit-transform: translateX(100%); }
+}
+@keyframes moveFromRightFade {
+  from { opacity: 0.3; -webkit-transform: translateX(100%); transform: translateX(100%); }
 }
 
 .fade {

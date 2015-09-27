@@ -14,3 +14,17 @@
   box-sizing: content-box;
   padding: 20px;
 }
+
+.search__addons + .hint {
+  right: 70px;
+}
+
+.hint-btn {
+  position: absolute;
+  bottom: 50px;
+  right: 30px;
+}
+
+.hint-btn.active {
+  box-shadow: 0px 0px 3px rgba(0,0,0,.3) inset;
+}
