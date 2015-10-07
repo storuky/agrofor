@@ -3,6 +3,7 @@
   border: 1px solid #ccc;
   border-radius: 2px;
   position: relative;
+  width: 100%;
 }
   
 .dimension.disabled .dimension__current {

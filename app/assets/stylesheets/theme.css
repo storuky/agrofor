@@ -87,11 +87,12 @@ a.link:active {
 
 h1 {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 30px;
   margin: 0 20px 20px -30px;
-  padding: 0 0 0 30px;
+  padding: 0 0 10px 30px;
   border-bottom: 2px solid rgb(255, 219, 76);
   display: inline-block;
+  color: #333;
 }
 
 h2 {
@@ -199,9 +200,15 @@ label.label {
 }
 
 .btn-primary {
-  background: #ffdb4c;
+  background: #FFDB4C;
   color: #2b2b2b;
-  border: 1px solid #d7b940;
+  box-shadow: 0px 1px 3px rgba(0,0,0,.3);
+  position: relative;
+}
+
+.btn-primary:active {
+  top: 1px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,.3);
 }
 
 .btn-default {

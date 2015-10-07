@@ -7,13 +7,14 @@
 
 
 
+
 .position__form {
   padding-top: 25px;
   width: 720px;
 }
 
 .position__form #title {
-  width: 308px;
+  width: 335px;
 }
       
 .position__form #category {
@@ -22,16 +23,16 @@
       
 .position__form #weight,
 .position__form #weight_min {
-  width: 162px; 
+  width: 175px; 
 }
 
 
 .position__form #price {
-  width: 200px;
+  width: 220px;
 }
   
 .position__form #discount {
-  width: 111px;
+  width: 114px;
 }
 
 .position__form #description {
@@ -118,4 +119,9 @@
 .position__template__no-result {
     padding: 10px;
     font-weight: 500;
+}
+
+
+#option_id {
+    min-width: 200px;
 }

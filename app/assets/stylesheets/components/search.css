@@ -2,9 +2,9 @@
   min-width: 470px;
   max-width: 1000px;
   position: absolute;
-  left: 230px;
-  right: 355px;
-  top: 20px;
+  left: 275px;
+  right: 220px;
+  top: 12px;
   z-index: 4;
   transition: .3s;
 }
@@ -14,7 +14,7 @@
 }
 
 .search__full ~ .search__extended__wrapper .search__extended {
-    top: 110px;
+    top: 104px;
 
     right: 24px;
 }

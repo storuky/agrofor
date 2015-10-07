@@ -1,29 +1,39 @@
 script type="text/ng-template" id="navigation.html"
-  .sidebar.hide-scroll scroll=""
-    a.logo href="/"
-      span.text-red Agro 
-      span for PRO
-    
-    nav.nav ng-class="{sign: gon.user, transparent: Page.transparent}" 
-      - if user_signed_in?
-        .nav__profile
-          img src="/images/profile.png"
-      .nav__create
-        a.btn.btn-primary.ripple ng-class="{'': Page.current == 'profile'}" href="/positions/new" Создать позицию
+  .sidebar-scroll.hide-scroll scroll=""
+    .sidebar
+      a.logo href="/"
+        span.text-red Agro 
+        span for PRO
       
-      .nav__links
-        a.nav__link place="right-top" hint="Основные разделы сайта" ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'positions'}" href="/positions?status=opened" Мои позиции
-        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'offers'}" href="/offers" Мои предложения
-        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'messages'}" href="/messages" Сообщения
-        /a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'analytics'}" href="/analytics" Аналитика
-        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'help'}" href="/help" Справка
-        a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'support'}" href="/support" Поддержка
-
-      footer.nav__footer
+      nav.nav ng-class="{sign: gon.user, transparent: Page.transparent}" 
+        - if user_signed_in?
+          .nav__profile
+            img src="/images/profile.png"
+        .nav__create
+          a.btn.btn-primary.ripple ng-class="{'': Page.current == 'profile'}" href="/positions/new" Создать позицию
+        
         .nav__links
-          - if user_signed_in?
-            a.nav__link ng-class="{active: Page.current == 'settings'}" href="/settings" Настройки
-            a.nav__link ng-click="Sign.out()" href="" Выход
-          - else
-            a.nav__link href="" ng-click="Sign.current = 'up'" Регистрация
-            a.nav__link href="" ng-click="Sign.current = 'in'" Вход
+          a.nav__link ng-class="{active: Page.current == 'search'}" href="/" Поиск
+          a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'profile'}" href="/profile" Мой профиль
+          a.nav__link place="right-top" hint="Основные разделы сайта" ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'positions'}" href="/positions?status=opened" Мои позиции
+          a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'offers'}" href="/offers" Мои предложения
+          a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'messages'}" href="/messages" Сообщения
+          a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'analytics'}" href="/analytics" Аналитика
+          
+          / .nav__links__br
+          
+          a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'help'}" href="/help" Справка
+          a.nav__link ng-click="Page.checkForAuth($event)" ng-class="{active: Page.current == 'support'}" href="/support" Поддержка
+
+        footer.nav__footer
+          .nav__links
+            - if user_signed_in?
+              a.nav__link ng-class="{active: Page.current == 'settings'}" href="/settings"
+                i.icon-gear
+                | Настройки
+              a.nav__link ng-click="Sign.out()" href=""
+                i.icon-login
+                | Выход
+            - else
+              a.nav__link href="" ng-click="Sign.current = 'up'" Регистрация
+              a.nav__link href="" ng-click="Sign.current = 'in'" Вход

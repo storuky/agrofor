@@ -1,12 +1,12 @@
 .page {
   position: absolute;
-  left: 200px;
+  left: 260px;
   right: 0;
   top: 0;
   bottom: 0;
   z-index: 1;
   background: #fff;
-  padding: 30px 10px 30px 30px;
+  padding: 16px 10px 30px 30px;
   overflow-x: hidden;
   transition: .3s;
   overflow-y: auto;

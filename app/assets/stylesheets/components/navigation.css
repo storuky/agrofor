@@ -1,4 +1,4 @@
-.sidebar {
+.sidebar-scroll {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -6,16 +6,21 @@
   width: 100%;
 }
 
+.sidebar {
+    width: 260px;
+    background-color: white;
+}
+
 .logo {
-  position: absolute;
-  z-index: 102;
   text-decoration: none;
   transition: .3s;
-  margin-top: 5px;
   color: black;
   font-size: 26px;
-  top: 23px;
-  left: 26px;
+  display: block;
+  padding: 17px 0;
+  text-align: center;
+  position: relative;
+  z-index: 3;
 }
 
 .logo-map {
@@ -25,22 +30,21 @@
 
 .nav {
   background: #fff;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  padding-top: 60px;
   position: absolute;
-  top: 0;
   left: 0;
   bottom: 0;
   z-index: 2;
-  width: 210px;
-  padding-top: 80px;
+  padding-top: 56px;
+  top: 0;
   height: auto;
   min-height: 435px;
+  width: 260px;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .nav.sign {
-  min-height: 620px;
+  min-height: 760px;
 }
 
 .nav__profile img {
@@ -51,22 +55,32 @@
 .nav__links {
 }
 
+.nav__links__br {
+  border-top: 1px solid gainsboro;
+  margin: 11px 0px;
+}
+
 .nav__link {
-  padding: 8px 22px;
+  padding: 11px 33px;
   display: block;
-  color: #000;
   text-decoration: none;
   transition: padding 0.3s;
-  font-size: 16px;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .nav__link:hover {
-  background-color: #fee9a5;
+  color: #333;
+}
+
+.nav__link:hover i, .nav__link.active i {
+  color: #7A7A7A;
 }
 
 .nav__link.active {
-  box-shadow: 4px 0 0px #ffdb4c inset;
-  font-weight: 500;
+  box-shadow: -2px 0 0px #ffdb4c inset;
+  color: black;
+  background-color: whitesmoke;
 }
 
 .nav__create {
@@ -79,6 +93,7 @@
   width: 100%;
   display: block;
   max-width: none;
+  font-size: 14px;
 }
 
 .nav__footer {
@@ -134,7 +149,6 @@
 }
 
 .nav__footer .nav__links {
-  border-top: 1px solid #d8d8d8;
 }
 
 .nav__footer .nav__link:hover {
@@ -155,4 +169,19 @@
 .nav__links .hint {
     margin-left: 80px;   
     margin-top: 24px;
+}
+
+
+.nav__link i {
+    color: #ABABAB;
+    font-size: 20px;
+    position: absolute;
+    margin-top: -1px;
+    margin-left: -40px;
+    vertical-align: middle;
+}
+
+.nav__footer .nav__link {
+    padding-left: 75px;
+    border-bottom: 1px solid gainsboro;
 }
