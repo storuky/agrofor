@@ -30,12 +30,12 @@
 
 .nav {
   background: #fff;
+  padding-top: 125px;
   transition: 0.3s;
   position: absolute;
   left: 0;
   bottom: 0;
   z-index: 2;
-  padding-top: 56px;
   top: 0;
   height: auto;
   min-height: 435px;
